@@ -5,7 +5,7 @@ using namespace std;
 
 void doSomething()
 {
-  Hello a;
+  Hello a("Cameron");
 }
 
 
@@ -13,17 +13,16 @@ int main()
 {
   cout << "Doing something now" << endl;
   int number;
-  Hello greeting;
-  int anotherNumber;
-  Hello bonjour;
-  Hello h1;
-  Hello h2;
-  Hello h3;
-  Hello h4;
-  Hello h5;
-  Hello h6;
-  Hello h7;
+  Hello greeting("greeting");
+  doSomething();
+  Hello bonjour("french");
+  Hello h1("h1");
 
+  cout << "Size of Hello: " << sizeof(h1) << endl;
+
+  cout << "size of int: " << sizeof(int) << endl;
+
+  greeting.greet();
 
   return 0;
 }

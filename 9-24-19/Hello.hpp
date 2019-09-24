@@ -7,22 +7,31 @@
 class Hello
 {
 public:
-  Hello()  // Constructor, invoked on instantiation
+  Hello(std::string theName)  // Constructor, invoked on instantiation
   {
-    std::cout << "Hello ctor" << std::endl;
+    name = theName;
+    std::cout << "Hello ctor (" << name << ")" << std::endl;
   }
 
   //Hello(const &Hello toCopy); // Copy constructor
   ~Hello() // Destructor, invoked on deletion* (aka memory clean up)
   {
-    std::cout << "Hello dtor" << std::endl;
+    std::cout << "Hello dtor (" << name << ")" << std::endl;
   }
+
+
+  void greet()
+  {
+    std::cout << "Hello " << name << "!" << std::endl;
+  }
+
 protected:
   // Intentionally leaving this empty... stay tuned. Don't drop the class.
 
 private:
   std::string name;
-
+  int aNumber;
+  int otherNumber;
 };
 
 
