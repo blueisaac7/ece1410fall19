@@ -3,6 +3,11 @@
 
 using namespace std;
 
+void doSomething()
+{
+  Hello a;
+}
+
 
 int main()
 {
