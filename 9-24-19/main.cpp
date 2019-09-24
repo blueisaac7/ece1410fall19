@@ -24,10 +24,10 @@ int main()
 
   greeting.greet();
 
-  string greetingsName = greeting.getName();
+  //string greetingsName = greeting.getName();
 
 
-  cout << "Hello " << greeting.name << endl;
+  //cout << "Hello " << greeting.name << endl;
 
   return 0;
 }
