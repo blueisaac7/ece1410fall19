@@ -24,5 +24,7 @@ int main()
 
   greeting.greet();
 
+  cout << "Hello " << greeting.name << endl;
+
   return 0;
 }

@@ -25,11 +25,11 @@ public:
     std::cout << "Hello " << name << "!" << std::endl;
   }
 
+  std::string name;
 protected:
   // Intentionally leaving this empty... stay tuned. Don't drop the class.
 
 private:
-  std::string name;
   int aNumber;
   int otherNumber;
 };
