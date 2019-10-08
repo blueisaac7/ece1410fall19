@@ -10,7 +10,7 @@ std::ostream& operator << (std::ostream& out, Queen queen);
 class Queen
 {
   public:
-    const static int SIZE = 3;
+    const static int SIZE = 8;
     
     Queen()
     {
@@ -29,21 +29,21 @@ class Queen
 
     bool solve(bool board[SIZE][SIZE], int row, int col)
     {
-      std::cout << "======================" << std::endl;
-      std::cout << "solve: [" << row << "][" << col << "]" << std::endl;
+      //std::cout << "======================" << std::endl;
+      //std::cout << "solve: [" << row << "][" << col << "]" << std::endl;
       // place a queen
       if (!board[row][col])
       {
         board[row][col] = true;
       }
-      std::cout << *this;
+      //std::cout << *this;
 
       // check is isValid
       // if ! isValid
       if (!isValid(board))
       {
         board[row][col] = false;
-        std::cout << "Failed this board" << std::endl;
+        //std::cout << "Failed this board" << std::endl;
         //return false;
       }
 
@@ -61,7 +61,7 @@ class Queen
         }
       }
 
-      std::cout << "Trying next square" << std::endl;
+      //std::cout << "Trying next square" << std::endl;
       solve (board, row, col);
     }
 
@@ -123,9 +123,27 @@ class Queen
 
     bool checkDiag(bool board[SIZE][SIZE], int queenRow, int queenCol)
     {
-      for (int diag = 0; diag < SIZE; ++diag)
+      for (int distance = 1; distance < SIZE; ++distance)
       {
-        
+        if ((queenRow + distance < SIZE ) && (queenCol + distance < SIZE) && board[queenRow + distance][queenCol + distance])
+        {
+          return true;
+        }
+
+        if ((queenRow - distance >= 0 ) && (queenCol + distance < SIZE) && board[queenRow - distance][queenCol + distance])
+        {
+          return true;
+        }
+
+        if ((queenRow + distance < SIZE ) && (queenCol - distance >= 0) && board[queenRow + distance][queenCol - distance])
+        {
+          return true;
+        }
+
+        if ((queenRow - distance >= 0) && (queenCol - distance >= 0) && board[queenRow - distance][queenCol - distance])
+        {
+          return true;
+        }
       }
 
       return false;
