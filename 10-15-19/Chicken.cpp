@@ -34,7 +34,7 @@ void Chicken::growOlder(float time)
 Chicken* Chicken::spawn(void)
 {
   Chicken* result = NULL;
-  if (age > 1.0)
+  if (age >= 1.0)
   {
     result = new Chicken();
   }
