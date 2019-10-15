@@ -1,7 +1,8 @@
 #include "Bird.hpp"
 
-Bird::Bird(void)
+Bird::Bird(BirdTypes type)
 {
+  this->type = type;
   weight = 0.1;
   age = 0.0f;
 }

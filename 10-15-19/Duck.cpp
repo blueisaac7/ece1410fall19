@@ -1,5 +1,9 @@
 #include "Duck.hpp"
 
+Duck::Duck() : Bird(BirdTypes::DUCK)
+{
+
+}
 
 std::string Duck::speak(void)
 {

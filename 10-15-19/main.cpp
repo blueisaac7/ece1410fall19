@@ -31,6 +31,9 @@ int main(void)
   delete pQuackSpawn;
   //pQuack = &peep;
 
+
+  Bird b = Chicken();
+
   //cout << "Bird pointer says " << pQuack->speak() << endl;
 
 
