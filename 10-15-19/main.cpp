@@ -1,22 +1,47 @@
 #include <iostream>
 #include "Chicken.hpp"
+#include "Duck.hpp"
+#include "Robin.hpp"
 
 using namespace std;
 
 
 int main(void)
 {
-  Chicken bob;
-  cout << bob.speak() << endl;
+  Duck quack;
+  Chicken peep;
+  Robin chirp;
+  cout << "Chicken says " << peep.speak() << endl;
+  cout << "Duck says " << quack.speak() << endl;
+  cout << "Robin says " << chirp.speak() << endl;
+  
+  Bird* pQuack = &quack;
+  Bird* pPeep = &peep;
+  Bird* pChirp = &chirp;
+
+  cout << "Chicken says " << pPeep->speak() << endl;
+  cout << "Duck says " << pQuack->speak() << endl;
+  cout << "Robin says " << pChirp->speak() << endl;
+
+  Bird* pQuackSpawn = pQuack->spawn();
+
+  cout << "Bird pointer says " << pQuack->speak() << endl;
+  cout << "Bird spawn pointer says " << pQuackSpawn->speak() << endl;
+
+  delete pQuackSpawn;
+  //pQuack = &peep;
+
+  //cout << "Bird pointer says " << pQuack->speak() << endl;
 
 
-  bob.growOlder(1.0);
+/*
+  peep.growOlder(1.0);
 
-  cout << bob.speak() << endl;
+  cout << peep.speak() << endl;
 
-  Chicken* bobSpawn = bob.spawn();
+  Chicken* peepSpawn = peep.spawn();
   //cout << (*bobSpawn).speak() << endl;
-  cout << bobSpawn->speak() << endl;
-
+  cout << peepSpawn->speak() << endl;
+*/
   return 0;
 }

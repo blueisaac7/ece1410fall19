@@ -3,21 +3,13 @@
 
 #include <string>
 
-class Chicken
+#include "Bird.hpp"
+
+class Chicken : public Bird
 {
   public:
-    Chicken(void);
     std::string speak(void);
-    float getWeight(void);
-    void eat(float food);
-    float getAge(void);
     Chicken* spawn(void);
-    void growOlder(float time);
-
-  private:
-    float weight;
-    float age;
-
 };
 
 #endif
