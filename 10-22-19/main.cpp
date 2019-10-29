@@ -1,6 +1,8 @@
 #include <iostream>
 #include <sstream>
 
+std::string fun();
+
 int main (int argc, char** argv)
 {
   std::cout << "Number of args: " << argc << std::endl;
@@ -26,6 +28,7 @@ int main (int argc, char** argv)
 
   std::cout << outAndIn.str();
 
+  fun();
 
   return 0;
 }
