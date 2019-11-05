@@ -2,19 +2,19 @@
 
 using namespace std;
 
-template <class Ryan>
-Ryan add (Ryan a, Ryan b)
+template <typename A, typename B, typename C>
+A add (int a, C b)
 {
-  return a + b;
+  return (A)(a + b);
 }
 
 int main()
 {
 
-  cout << add(3,5) << endl;
-  cout << add(3.1f,5.5f) << endl;
+  cout << add<int, float, double>(3,5) << endl;
+  //cout << add<std::string, int, float>(3.1f,5.5f) << endl;
 
-  cout << add(string("A"), string("B")) << endl;
+  cout << add<std::string, std::string, std::string>(string("A"), string("B")) << endl;
 
 
   return 0;
